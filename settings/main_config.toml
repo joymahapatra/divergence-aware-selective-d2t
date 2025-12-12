@@ -1,0 +1,96 @@
+title = "configuration for scaling D2T"
+
+[person]
+name = "Joy Mahapatra"
+created = 2025-07-15T00:00:00Z
+
+[task]
+name = "code_premi"
+domain = "text"
+
+[location]
+models = "set_this_path"
+datasets = "set_this_path"
+results = "set_this_path"
+
+[preprocessing]
+max_length = 256
+reference_attach = "===="
+
+[model]
+seed = 7338
+learning_rate = 4e-4           # 3.5e-6, 2e-5, 1e-5, 5e-5, 1e-4
+num_epoch = 2.0
+max_grad_norm = 1.0
+storing_count = 2               # number of checkpoint will be stored
+patience = 5
+gradient_accumulation_steps = 1
+is_gradient_checkpointing = false
+
+[model2path]
+opt1 = 'facebook/opt-125m'
+opt2 ='facebook/opt-350m'
+opt3 = 'facebook/opt-1.3b'
+opt4 = 'facebook/opt-2.7b'
+opt5 = 'facebook/opt-6.7b'
+opt6 = 'facebook/opt-13b'
+bloom1 = 'bigscience/bloom-560m'
+bloom2 = 'bigscience/bloom-1b1'
+bloom3 = 'bigscience/bloom-1b7'
+bloom4 = 'bigscience/bloom-3b'
+bloom5 = 'bigscience/bloom-7b1'
+llama1 = 'meta-llama/Llama-2-7b-hf'
+llama2 = 'meta-llama/Llama-2-13b-hf'
+pythia1 = 'EleutherAI/pythia-70m-deduped'
+pythia2 = 'EleutherAI/pythia-160m-deduped'
+pythia3 = 'EleutherAI/pythia-410m-deduped'
+pythia4 = 'EleutherAI/pythia-1b-deduped'
+pythia5 = 'EleutherAI/pythia-1.4b-deduped'
+pythia6 = 'EleutherAI/pythia-2.8b-deduped'
+pythia7 = 'EleutherAI/pythia-6.9b-deduped'
+pythia8 = 'EleutherAI/pythia-12b-deduped'
+bart1 = 'facebook/bart-base'
+bart2 ='facebook/bart-large'
+t51 = 'google-t5/t5-base'
+t52 = 'google-t5/t5-large'
+t53 = 'google-t5/t5-3b'
+flant51 = 'google/flan-t5-small'
+flant52 = 'google/flan-t5-base'
+flant53 = 'google/flan-t5-large'
+flant54 = 'google/flan-t5-xl'
+flant55 = 'google/flan-t5-xxl'
+mamba1 = 'state-spaces/mamba-130m-hf'
+mamba2 = 'state-spaces/mamba-370m-hf'
+mamba3 = 'state-spaces/mamba-790m-hf'
+mamba4 = 'state-spaces/mamba-1.4b-hf'
+mamba5 = 'state-spaces/mamba-2.8b-hf'
+qwen1 = 'Qwen/Qwen2.5-0.5B'
+qwen2 = 'Qwen/Qwen2.5-1.5B'
+qwen3 = 'Qwen/Qwen2.5-3B'
+qwen4 = 'Qwen/Qwen2.5-7B'
+qwen5 = 'Qwen/Qwen2.5-14B'
+
+
+
+[dataset2path]
+e2e = 'GEM/e2e_nlg'
+viggo = 'GEM/viggo'
+dart = 'GEM/dart'
+webnlg = ['GEM/web_nlg', 'en']
+wikitabletext = 'kasnerz/wikitabletext'
+logicnlg = 'kasnerz/logicnlg'
+chattotext = 'kasnerz/charttotext-s'
+eventnarrative = 'kasnerz/eventnarrative'
+commonsensegen = 'GEM/common_gen'
+yelpreview = 'yelp_review_full'
+
+[dataset2class]
+e2e = 'E2eDataset'
+viggo = 'ViggoDataset'
+dart = 'DartDataset'
+webnlg = 'WebnlgDataset'
+wikitabletext = 'WikitabletextDataset'
+logicnlg = 'LogicnlgDataset'
+chattotext = 'CharttotextDataset'
+eventnarrative = 'EventnarrativeDataset'
+
